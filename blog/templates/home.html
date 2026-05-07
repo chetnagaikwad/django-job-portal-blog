@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal Blog</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family: Arial, sans-serif;
+            background:#f5f7fb;
+            color:#111827;
+        }
+
+        /* Navbar */
+
+        .navbar{
+            background:#111827;
+            color:white;
+            padding:18px 6%;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            flex-wrap:wrap;
+        }
+
+        .logo{
+            font-size:28px;
+            font-weight:bold;
+        }
+
+        .search-box form{
+            display:flex;
+            gap:10px;
+            margin-top:10px;
+        }
+
+        .search-box input{
+            padding:10px;
+            width:250px;
+            border:none;
+            border-radius:6px;
+            outline:none;
+        }
+
+        .search-box button{
+            padding:10px 16px;
+            border:none;
+            background:#2563eb;
+            color:white;
+            border-radius:6px;
+            cursor:pointer;
+        }
+
+        .search-box button:hover{
+            background:#1d4ed8;
+        }
+
+        /* Hero Section */
+
+        .hero{
+            background:linear-gradient(to right,#2563eb,#1e3a8a);
+            color:white;
+            text-align:center;
+            padding:70px 20px;
+        }
+
+        .hero h1{
+            font-size:42px;
+            margin-bottom:15px;
+        }
+
+        .hero p{
+            font-size:18px;
+            max-width:700px;
+            margin:auto;
+            line-height:1.7;
+        }
+        .category-section{
+            width:90%;
+            margin:40px auto;
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:center;
+            gap:20px;
+        }
+
+        .category-card{
+            width:250px;
+            background:white;
+            padding:30px 20px;
+            border-radius:12px;
+            text-align:center;
+            box-shadow:0px 2px 10px rgba(0,0,0,0.1);
+            transition:0.3s;
+            cursor:pointer;
+        }
+
+        .category-card:hover{
+            transform:translateY(-5px);
+            box-shadow:0px 4px 18px rgba(0,0,0,0.15);
+        }
+
+        .category-card h2{
+            margin-top:10px;
+            font-size:24px;
+        }
+
+        .category-card p{
+            margin-top:10px;
+            color:#6b7280;
+        }
+
+        .category-card a{
+            text-decoration:none;
+            color:inherit;
+        }
+
+        .section-title{
+            text-align:center;
+            margin:20px 0;
+            font-size:34px;
+        }
+
+        .container{
+            width:90%;
+            margin:auto;
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:center;
+            gap:25px;
+            padding-bottom:50px;
+        }
+
+        .card{
+            width:340px;
+            background:white;
+            border-radius:12px;
+            overflow:hidden;
+            box-shadow:0px 2px 12px rgba(0,0,0,0.1);
+            transition:0.3s;
+        }
+
+        .card:hover{
+            transform:translateY(-6px);
+        }
+
+        .card img{
+            width:100%;
+            height:220px;
+            object-fit:cover;
+            display:block;
+        }
+
+        .card-content{
+            padding:20px;
+        }
+
+        .category{
+            display:inline-block;
+            background:#dbeafe;
+            color:#1d4ed8;
+            padding:6px 12px;
+            border-radius:20px;
+            font-size:14px;
+            font-weight:bold;
+            margin-bottom:12px;
+        }
+
+        .card h2{
+            margin-bottom:12px;
+            font-size:24px;
+        }
+
+        .card p{
+            color:#4b5563;
+            line-height:1.6;
+        }
+
+        .read-btn{
+            margin-top:18px;
+            padding:10px 18px;
+            border:none;
+            background:#111827;
+            color:white;
+            border-radius:6px;
+            cursor:pointer;
+        }
+
+        .read-btn:hover{
+            background:black;
+        }
+
+        .pagination{
+            text-align:center;
+            margin-bottom:50px;
+        }
+
+        .pagination button{
+            padding:10px 16px;
+            margin:5px;
+            border:none;
+            background:#2563eb;
+            color:white;
+            border-radius:6px;
+            cursor:pointer;
+        }
+
+        .pagination button:hover{
+            background:#1d4ed8;
+        }
+
+        
+        .footer{
+            background:#111827;
+            color:white;
+            text-align:center;
+            padding:25px;
+        }
+
+        .footer p{
+            margin-top:8px;
+            color:#d1d5db;
+        }
+
+       
+        @media(max-width:768px){
+
+            .navbar{
+                flex-direction:column;
+                text-align:center;
+            }
+
+            .search-box input{
+                width:180px;
+            }
+
+            .hero h1{
+                font-size:30px;
+            }
+
+            .hero p{
+                font-size:16px;
+            }
+
+            .container{
+                width:95%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    
+    <div class="navbar">
+
+        <div class="logo">
+            JobPortal
+        </div>
+
+        <div class="search-box">
+
+            <form method="GET">
+
+                <input type="text" name="search" placeholder="Search blogs...">
+
+                <button type="submit">Search</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- Hero -->
+
+    <div class="hero">
+
+        <h1>Stay Updated with Latest Jobs, Results & Admit Cards</h1>
+
+        <p>
+            Explore latest government jobs, admit cards, exam results,
+            career updates and informative articles in one place.
+        </p>
+
+    </div>
+
+  
+    <div class="category-section">
+
+        <a href="/">
+            <div class="category-card">
+                <h2>📚 All Posts</h2>
+                <p>Explore all latest updates and blogs.</p>
+            </div>
+        </a>
+
+        <a href="/?category=jobs">
+            <div class="category-card">
+                <h2>💼 Latest Jobs</h2>
+                <p>Find latest government and private jobs.</p>
+            </div>
+        </a>
+
+        <a href="/?category=admit">
+            <div class="category-card">
+                <h2>📝 Admit Cards</h2>
+                <p>Download latest admit cards and hall tickets.</p>
+            </div>
+        </a>
+
+        <a href="/?category=result">
+            <div class="category-card">
+                <h2>🏆 Results</h2>
+                <p>Check latest exam and recruitment results.</p>
+            </div>
+        </a>
+
+    </div>
+
+    <h1 class="section-title">Latest Updates</h1>
+
+    <div class="container">
+
+        {% for blog in blogs %}
+
+        <div class="card">
+
+            <img src="{{ blog.image.url }}" alt="">
+
+            <div class="card-content">
+
+                <p class="category">{{ blog.category }}</p>
+
+                <h2>{{ blog.title }}</h2>
+
+                <p>{{ blog.content|safe|truncatewords:20 }}</p>
+
+                <a href="{% url 'blog_detail' blog.id %}">
+                    <button class="read-btn">Read More</button>
+                </a>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+    <div class="pagination">
+
+        {% if blogs.has_previous %}
+            <a href="?page={{ blogs.previous_page_number }}">
+                <button>Previous</button>
+            </a>
+        {% endif %}
+
+        <span>
+            Page {{ blogs.number }} of {{ blogs.paginator.num_pages }}
+        </span>
+
+        {% if blogs.has_next %}
+            <a href="?page={{ blogs.next_page_number }}">
+                <button>Next</button>
+            </a>
+        {% endif %}
+
+    </div>
+
+    <div class="footer">
+
+        <h2>JobPortal</h2>
+
+        <p>Latest Jobs • Results • Admit Cards</p>
+
+        <p>© 2026 All Rights Reserved</p>
+
+    </div>
+
+</body>
+
+</html>
