@@ -30,7 +30,7 @@ Open Project Folder
 <img src="homepage.png" width="500"><br><br>
 <img src="readmore.png" width="500"><br><br>
 <img src="blog.png" width="500"><br><br>
-<img src="adminpanel.jpg" width="500"><br><br>
+<img src="adminpanel.JPG" width="500"><br><br>
 
 ### Clone the repository
 git clone https://github.com/chetnagaikwad/django-job-portal-blog.git
