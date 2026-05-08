@@ -20,5 +20,5 @@ A modern Django-based blog portal for publishing latest jobs, admit cards, resul
 - CSS
 - CKEditor
 ## screenshort
-![homepage](screenshort/homepage.png)
-![readme](readme/readmore.png)
+<img src="homepage.png" width="500"><br><br>
+<img src="readmore.png" width="500"><br><br>
